@@ -1,0 +1,53 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield" xmlns:l="sap.ui.layout" controllerName="ZODD_HOURS_S2D.controller.View1" displayBlock="true">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<l:VerticalLayout width="100%">
+						<l:content height="100%">
+							<VBox>
+								<form:SimpleForm editable="true" id="sf">
+									<Label id="lb1" text="Personnel Number" width="100%"/>
+									<Input width="25%" id="__input0" maxLength="10" required="true" showSuggestion="true" valueLiveUpdate="true" valueHelpRequest="onHelp"/>
+									<Label id="lb2" text="Employee Name"/><Input width="50%" id="__input1" required="true"/>
+									<Label id="lb3" text="Email ID"/><Input width="50%" id="__input2" required="true" type="Email"/>
+									<Label id="lb8" text="Approver Email ID"/><Input width="50%" id="__input6" required="true" type="Email"/>
+									<Label id="lb4" text="Date"/><Input width="20%" id="__input3" type="Date" required="true"/>
+									<Label id="lb5" text="Name of Project"/><Input width="30%" id="__input5" value="Swift" editable="false"/>
+									<Label id="por" text="Portfolio"/><Input width="30%" id="__inpp" required="true" value="Enterprise Operations"/>
+									<Label id="off" text="Offering"/><Input width="30%" id="__inpo" required="true" value="SAP"/>
+									<Label id="lb7" text="Hours"/><Input width="10%" id="__input9" maxLength="5" required="true"/>
+									<Label id="lb6" text="Level 4 WBS"/>
+									<form:content>
+										<HBox xmlns="sap.m" displayInline="true" alignContent="Start" justifyContent="Start" alignItems="Start" fitContainer="true" renderType="Bare">
+											<Input width="12%" id="__input4" required="true" maxLength="8"/>
+											<VBox alignContent="Start" alignItems="Start">
+												<Label text="_" design="Bold" textAlign="Begin"/>
+												<!--<Text text="_" id="__text1" wrapping="false" textAlign="Initial"/>-->
+											</VBox>
+											<Input width="6%" id="input5" required="true" maxLength="2"/><Label text="_" design="Bold"/>
+											<Input width="6%" id="input6" required="true" maxLength="2"/><Label text="_" design="Bold"/>
+											<Input width="6%" id="input7" required="true" maxLength="2"/><Label text="_" design="Bold"/>
+											<Input width="8%" id="input8" required="true" maxLength="4"/>
+										</HBox>
+									</form:content>
+									<Label/>
+									<Button id="b1" text="SAVE" icon="sap-icon://save" width="15%" type="Accept" press="onClick"/>
+								</form:SimpleForm>
+							</VBox>
+						</l:content>
+						<l:content>
+							<VBox>
+								<Image width="1340px" height="200px" id="__image0" mode="Background" src="images/background.JPG"/>
+							</VBox>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+				<headerContent>
+					<Button text="Approvals" width="120px" id="button3" icon="sap-icon://approvals" press="onApprove" enabled="true" type="Emphasized"/>
+					<Button text="Report" width="110px" id="__button2" icon="sap-icon://activity-items" press="onClickReport" type="Emphasized" enabled="false"/>
+				</headerContent>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

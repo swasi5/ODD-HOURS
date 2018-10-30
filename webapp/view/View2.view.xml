@@ -1,0 +1,77 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:core="sap.ui.core"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" controllerName="ZODD_HOURS_S2D.controller.View2" displayBlock="true">
+	<App id="app2">
+		<pages>
+			<!--<Page title="{i18n>title}" titleLevel="H2" class="sapUiContentPadding" showNavButton="true" navButtonPress="goBack">-->
+			<ScrollContainer height="100%" vertical='true'>
+				<Table id="itable" inset="false" items="{ path: 'Model>/ODD_DETAILSSet', sorter: { path: 'EMP_ID' } }">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="REPORT" level="H2"/>
+							<ToolbarSpacer/>
+							<DateRangeSelection width="20%" id="DRS2" dateValue="{path:'/dateValueDRS2'}" secondDateValue="{path:'/secondDateValueDRS2'}"
+								minDate="{path:'/dateMinDRS2'}" maxDate="{path:'/dateMaxDRS2'}" change="handleChange"/>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://download" press="onDataExport"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="empid" hAlign="Left" width="10%">
+							<Text text="Employee ID"/>
+						</Column>
+						<Column id="empname" demandPopin="true" hAlign="Left" width="16%">
+							<Text text="Employee Name"/>
+						</Column>
+						<Column id="empmail" width="16%" demandPopin="true" hAlign="Left">
+							<Text text="Employee Email ID"/>
+						</Column>
+						<Column id="dates" width="12%" demandPopin="true">
+							<Text text="Date"/>
+						</Column>
+						<Column id="emphours" width="8%" demandPopin="true" hAlign="Left">
+							<Text text="Hours"/>
+						</Column>
+						<Column id="wbs" width="15%" demandPopin="true" hAlign="Left">
+							<Text text="WBS Code"/>
+						</Column>
+						<Column id="stat" width="8%" demandPopin="true" hAlign="Left">
+							<Text text="Status"/>
+						</Column>
+						<Column id="proj" hAlign="Left" demandPopin="true" width="10%">
+							<Text text="Project"/>
+						</Column>
+<!--						<Column id="por" hAlign="Left" demandPopin="true" width="10%">
+							<Text text="Protfolio"/>
+						</Column>
+						<Column id="off" hAlign="Left" demandPopin="true" width="10%">
+							<Text text="Offering"/>
+						</Column>-->
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier text="{Model>EMP_ID}"/>
+								<Text text="{Model>EMP_NAME}"/>
+								<Text text="{Model>EMP_EMAIL_ID}"/>
+								<!--<Text text="{Model>DATE}" />-->
+								<!--<Text id="t2" text="{ path:'Model>DATE', 
+								             type:'sap.ui.model.type.DateTime', 
+								             formatOptions: { pattern: 'long' }}" />-->
+								<ObjectStatus text="{ path: 'Model>DATE', formatter: '.formatter.changeDate'}"/>
+								<Text text="{Model>HOURS}"/>
+								<Text text="{Model>WBS_CODE}"/>
+								<!--<Text text="{Model>STATUS}"/>-->
+								<ObjectStatus text="{Model>STATUS}" state="{ path: 'Model>STATUS', formatter: '.formatter.statusText' }"/>
+								<!--	icon="{ path: 'Model>STATUS', formatter:'.formatter.statusIcon'}"/> -->
+								<Text text="{Model>PROJECT}"/>
+							<!--	<Text text="{Model>PORTFOLIO}"/>
+								<Text text="{Model>OFFERING}"/>-->
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</ScrollContainer>
+			<!--</Page>-->
+		</pages>
+	</App>
+</mvc:View>

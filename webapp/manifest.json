@@ -1,0 +1,153 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "ZODD_HOURS_S2D",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.38.11"
+		},
+		"dataSources": {
+			"S4H": {
+				"uri": "/sap/opu/odata/sap/ZODD_HOURS_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"S4HU": {
+				"uri": "/sap/opu/odata/sap/ZODATA_UNAME_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"APPR": {
+				"uri": "/sap/opu/odata/sap/ZODATA_APP_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ZODD_HOURS_S2D.view.View1",
+			"type": "XML"
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "ZODD_HOURS_S2D.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "View1",
+					"targetAggregation": "pages",
+					"target": "View1"
+				},
+				{
+					"pattern": "View2",
+					"name": "View2",
+					"targetAggregation": "pages",
+					"target": "View2"
+				},
+				{
+					"pattern": "View3",
+					"name": "View3",
+					"targetAggregation": "pages",
+					"target": "View3"
+				}
+			],
+			"targets": {
+				"View1": {
+					"viewName": "View1",
+					"viewLevel": 1
+				},
+				"View2": {
+					"viewName": "View2",
+					"viewLevel": 2
+				},
+				"View3": {
+					"viewName": "View3",
+					"viewLevel": 2
+				}
+			}
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ZODD_HOURS_S2D.i18n.i18n"
+				}
+			},
+			"Model": {
+				"dataSource": "S4H"
+			},
+			"Name": {
+				"dataSource": "S4HU"
+			},
+			"Approver": {
+				"dataSource": "APPR"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zodd_hours_s2d/webapp",
+		"_version": "1.1.0"
+	}
+}

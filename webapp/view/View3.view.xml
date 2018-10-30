@@ -1,0 +1,62 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:fb="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
+	controllerName="ZODD_HOURS_S2D.controller.View3" displayBlock="true">
+	<App id="app2">
+		<pages>
+			<!--<Page title="{i18n>title}" titleLevel="H2" class="sapUiContentPadding" showNavButton="true" navButtonPress="goBack">-->
+			<ScrollContainer height="100%" vertical='true'>
+				<Table id="approver" items="{ path: 'Approver>/APPROVERSet', sorter: { path: 'ID' } }" width="100%">
+					<headerToolbar>
+						<OverflowToolbar id="otb1">
+							<Label text="RESOURCE DETAILS"/>
+							<ToolbarSpacer/>
+							<Button id="saveButton" text="Save" type="Emphasized" press="onSave" visible="true"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column width="10%">
+							<Text text="Employee ID"/>
+						</Column>
+						<Column width="16%" hAlign="Left">
+							<Text text="Employee Name"/>
+						</Column>
+						<Column demandPopin="true" width="12%" hAlign="Left">
+							<Text text="Date"/>
+						</Column>
+						<Column width="15%" demandPopin="true" hAlign="Left">
+							<Text text="WBS CODE"/>
+						</Column>
+						<Column width="15%" demandPopin="true" hAlign="Left">
+							<Text text="Current Status"/>
+						</Column>
+						<Column width="10%" demandPopin="true" hAlign="Left">
+							<Text text="Hours"/>
+						</Column>
+						<Column width="20%" demandPopin="true" hAlign="Left">
+							<Text text="APPROVE / REJECT"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier text="{Approver>ID}"/>
+								<ObjectIdentifier text="{Approver>NAME}"/>
+								<!--<ObjectIdentifier text="{Approver>DATE}" />-->
+								<ObjectIdentifier text="{ path: 'Approver>DATE', formatter: '.formatter.changeDate' }"/>
+								<ObjectIdentifier text="{Approver>WBS}"/>
+								<ObjectIdentifier text="{Approver>STATUS}"/>
+								<Input id="id_in" value="{Approver>HOUR}" width="50%" maxLength="5" required="true"/>
+								<Switch ariaLabelledBy="__text5" id="__switch0" type="AcceptReject" customTextOff="Reject" customTextOn="Approved" state="true"/>
+								<!--<ComboBox items="Status">-->
+								<!--	<core:Item key="Approve" text="Approve"/>-->
+								<!--	<core:Item key="Reject" text="Reject"/>-->
+								<!--</ComboBox>-->
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</ScrollContainer>
+			<!--</Page>-->
+		</pages>
+	</App>
+</mvc:View>
