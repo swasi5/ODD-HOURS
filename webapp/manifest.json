@@ -15,21 +15,21 @@
 		},
 		"dataSources": {
 			"S4H": {
-				"uri": "/sap/opu/odata/sap/ZODD_HOURS_SRV/",
+				"uri": "/destinations/F2D/sap/opu/odata/sap/ZODD_HOURS_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0"
 				}
 			},
 			"S4HU": {
-				"uri": "/sap/opu/odata/sap/ZODATA_UNAME_SRV/",
+				"uri": "/destinations/F2D/sap/opu/odata/sap/ZODATA_UNAME_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0"
 				}
 			},
 			"APPR": {
-				"uri": "/sap/opu/odata/sap/ZODATA_APP_SRV/",
+				"uri": "/destinations/F2D/sap/opu/odata/sap/ZODATA_APP_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0"
